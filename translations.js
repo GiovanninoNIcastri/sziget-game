@@ -8,9 +8,9 @@ const translations = {
         // Step 2: Gender Selection
         genderTitle: "🎪 Festival Game",
         genderSubtitle: "Select your gender to start!",
-        maleButton: "👨 Boy",
+        maleButton: "Boy",
         maleSubtitle: "Friendship Mode",
-        femaleButton: "👩 Girl", 
+        femaleButton: "Girl", 
         femaleSubtitle: "Flirt Mode",
         
         // Step 3: Activity Selection
@@ -262,9 +262,9 @@ const translations = {
         // Step 2: Gender Selection
         genderTitle: "🎪 Festival Game",
         genderSubtitle: "¡Selecciona tu género para comenzar!",
-        maleButton: "👨 Chico",
+        maleButton: "Chico",
         maleSubtitle: "Modo Amistad",
-        femaleButton: "👩 Chica",
+        femaleButton: "Chica",
         femaleSubtitle: "Modo Flirteo",
         
         // Step 3: Activity Selection
@@ -389,9 +389,9 @@ const translations = {
         // Step 2: Gender Selection
         genderTitle: "🎪 Festival Game",
         genderSubtitle: "Sélectionne ton genre pour commencer !",
-        maleButton: "👨 Garçon",
+        maleButton: "Garçon",
         maleSubtitle: "Mode Amitié",
-        femaleButton: "👩 Fille",
+        femaleButton: "Fille",
         femaleSubtitle: "Mode Flirt",
         
         // Step 3: Activity Selection
@@ -516,9 +516,9 @@ const translations = {
         // Step 2: Gender Selection
         genderTitle: "🎪 Festival Game",
         genderSubtitle: "Wähle dein Geschlecht um zu beginnen!",
-        maleButton: "👨 Junge",
+        maleButton: "Junge",
         maleSubtitle: "Freundschaftsmodus",
-        femaleButton: "👩 Mädchen",
+        femaleButton: "Mädchen",
         femaleSubtitle: "Flirtmodus",
         
         // Step 3: Activity Selection
