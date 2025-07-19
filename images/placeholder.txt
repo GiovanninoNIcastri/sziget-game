@@ -1,0 +1,8 @@
+Aggiungi qui le tue foto:
+
+- person1.jpg (o .png) - Foto della Persona 1
+- person2.jpg (o .png) - Foto della Persona 2  
+- person3.jpg (o .png) - Foto della Persona 3
+- person4.jpg (o .png) - Foto della Persona 4
+
+Formato consigliato: 300x300px, formato JPG o PNG 

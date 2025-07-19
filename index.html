@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Game - Sziget</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Step 1: Selezione Lingua -->
+        <div id="step0" class="step active">
+            <div class="header">
+                <h1 id="languageTitle">🌍 Choose your language</h1>
+                <p id="languageSubtitle">Select your preferred language</p>
+            </div>
+            
+            <div class="language-selection">
+                <button class="language-btn" onclick="selectLanguage('en')">
+                    <span class="flag">🇬🇧</span>
+                    <span class="lang-name">English</span>
+                </button>
+                <button class="language-btn" onclick="selectLanguage('it')">
+                    <span class="flag">🇮🇹</span>
+                    <span class="lang-name">Italiano</span>
+                </button>
+                <button class="language-btn" onclick="selectLanguage('es')">
+                    <span class="flag">🇪🇸</span>
+                    <span class="lang-name">Español</span>
+                </button>
+                <button class="language-btn" onclick="selectLanguage('fr')">
+                    <span class="flag">🇫🇷</span>
+                    <span class="lang-name">Français</span>
+                </button>
+                <button class="language-btn" onclick="selectLanguage('de')">
+                    <span class="flag">🇩🇪</span>
+                    <span class="lang-name">Deutsch</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 2: Selezione Sesso -->
+        <div id="step1" class="step">
+            <div class="header">
+                <h1>🎪 Festival Game</h1>
+                <p>Seleziona il tuo sesso per iniziare!</p>
+            </div>
+            
+            <div class="gender-selection">
+                <button class="gender-btn male" onclick="selectGender('male')">
+                    <span class="emoji">👨</span>
+                    <span class="text">Ragazzo</span>
+                </button>
+                <button class="gender-btn female" onclick="selectGender('female')">
+                    <span class="emoji">👩</span>
+                    <span class="text">Ragazza</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 3: Selezione Attività -->
+        <div id="step2" class="step">
+            <div class="header">
+                <h2>🎯 Scegli la tua sfida!</h2>
+                <p>Premi il bottone per un'attività random</p>
+            </div>
+            
+            <div class="activity-section">
+                <button id="activityBtn" class="activity-btn" onclick="generateActivity()">
+                    <span class="btn-text">🎲 Genera Attività</span>
+                </button>
+                
+                <div id="activityResult" class="activity-result hidden">
+                    <div class="activity-card">
+                        <h3 id="activityTitle">Attività</h3>
+                        <p id="activityDescription">Descrizione</p>
+                    </div>
+                    <button class="next-btn" onclick="nextStep()">Continua →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Selezione Persona -->
+        <div id="step3" class="step">
+            <div class="header">
+                <h2>👥 Chi sarà la tua vittima?</h2>
+                <p>Premi il bottone per scegliere casualmente con chi fare l'attività</p>
+            </div>
+            
+            <div class="person-selection">
+                <button id="personBtn" class="person-random-btn" onclick="selectPersonRandom()">
+                    <span class="btn-text">🎲 Seleziona Random</span>
+                </button>
+                
+                <div class="group-members" id="groupMembers">
+                    <div class="person-display" data-person="1">
+                        <div class="person-image">
+                            <img src="images/giovannino.jpg" alt="Persona 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span class="emoji-fallback">👤</span>
+                        </div>
+                        <span class="person-name">Giovannino</span>
+                    </div>
+                    <div class="person-display" data-person="2">
+                        <div class="person-image">
+                            <img src="images/alessandro.jpg" alt="Alessandro" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span class="emoji-fallback">👤</span>
+                        </div>
+                        <span class="person-name">Alessandro</span>
+                    </div>
+                    <div class="person-display" data-person="3">
+                        <div class="person-image">
+                            <img src="images/francesco.jpg" alt="Francesco" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span class="emoji-fallback">👤</span>
+                        </div>
+                        <span class="person-name">Francesco</span>
+                    </div>
+                    <div class="person-display" data-person="4">
+                        <div class="person-image">
+                            <img src="images/mattia.jpg" alt="Mattia" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span class="emoji-fallback">👤</span>
+                        </div>
+                        <span class="person-name">Mattia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 5: Risultato Finale -->
+        <div id="step4" class="step">
+            <div class="header">
+                <h2>🎉 Risultato Finale!</h2>
+            </div>
+            
+            <div class="final-result">
+                <div class="challenge-card">
+                    <h3>La tua sfida:</h3>
+                    <p id="finalActivity"></p>
+                    <h4>Devi farlo con:</h4>
+                    <div class="final-person-display">
+                        <div class="final-person-image">
+                            <img id="finalPersonImage" src="" alt="Persona selezionata">
+                            <span class="final-emoji-fallback">👤</span>
+                        </div>
+                        <p id="finalPerson"></p>
+                    </div>
+                </div>
+                
+                <div class="reward-section">
+                    <div class="reward-card">
+                        <span class="emoji">🍺</span>
+                        <h3>Premio!</h3>
+                        <p>Se completi la sfida, vinci uno spruzzo di alcol! 🎯</p>
+                    </div>
+                </div>
+                
+                <button class="restart-btn" onclick="restartGame()">🔄 Nuova Partita</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
